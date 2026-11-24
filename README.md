@@ -4,7 +4,10 @@ Sistema para registrar incidentes de TI, priorizar a fila pelo prazo de soluçã
 
 ## Integrantes
 
-A composição do grupo será registrada pelos integrantes antes da entrega. A participação fica registrada nos pull requests e nas revisões do GitHub.
+- [@Silveira-k7](https://github.com/Silveira-k7)
+- [@GabrielFreire05](https://github.com/GabrielFreire05)
+- [@CaueFeliciano](https://github.com/CaueFeliciano)
+- [@NicolasDM22](https://github.com/NicolasDM22)
 
 ## Instalação e execução
 
