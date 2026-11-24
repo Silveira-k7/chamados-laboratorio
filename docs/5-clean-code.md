@@ -86,6 +86,6 @@ ruff format --check .
 python -m unittest discover -s tests -v
 ```
 
-Os quatro testes cobrem a ordem da triagem, o ciclo de atendimento, uma transição inválida e a rejeição de atualização com versão antiga. Acompanhe o resultado do [workflow de qualidade](https://github.com/Silveira-k7/chamados-laboratorio/actions/workflows/qualidade.yml) no PR e nos pushes ao `main`.
+Quatro testes de fluxo cobrem a ordem da triagem, o ciclo de atendimento, uma transição inválida e a rejeição de atualização com versão antiga. Um quinto teste [confere os imports entre as camadas](https://github.com/Silveira-k7/chamados-laboratorio/blob/dde43c9ca02c4584e898e59234092ab0829e34d2/tests/test_architecture.py#L35-L44). Acompanhe o resultado do [workflow de qualidade](https://github.com/Silveira-k7/chamados-laboratorio/actions/workflows/qualidade.yml) no PR e nos pushes ao `main`.
 
 [Catálogo de code smells e técnicas de refatoração](https://refactoring.guru/pt-br/refactoring). A extração de `_append` é um exemplo de como evitar Código Duplicado neste fluxo.

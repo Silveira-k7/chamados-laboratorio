@@ -1,12 +1,12 @@
-# ADR 0002 · Persistência transacional em SQLite
+# ADR 0002 · Persistir chamados e histórico em SQLite
 
 ## Status
 
-Proposto. Aguarda a revisão da implementação pelo grupo.
+Proposto
 
 ## Contexto
 
-O histórico precisa refletir o estado salvo mesmo se uma gravação for interrompida.
+O histórico precisa refletir o estado salvo mesmo se uma gravação for interrompida. O sistema roda no posto de suporte e dois comandos podem ler o mesmo chamado antes de uma atualização.
 
 ## Decisão
 

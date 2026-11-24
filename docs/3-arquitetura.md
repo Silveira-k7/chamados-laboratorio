@@ -2,13 +2,13 @@
 
 ## Plano macro
 
-O sistema é um monólito em camadas. Um comando executa interface, casos de uso e persistência local no mesmo processo.
+O sistema é um monólito em camadas. Um comando executa interface, casos de uso e persistência local no mesmo processo. A decisão segue os critérios das seções 5.5 a 5.7 de [Abreu (2026)](8-conclusao.md#referências), nas páginas 40 a 42.
 
 | Critério do capítulo de estilo | Aplicação ao projeto |
 | --- | --- |
 | Quando adotar | Um grupo mantém o sistema, o fluxo é curto e os componentes precisam da mesma transação. |
 | Quando evitar | A implantação precisaria mudar diante de operação por várias equipes remotas ou escalabilidade independente da leitura e da escrita. |
-| Custo real | Uma mudança em qualquer camada exige atualizar a aplicação toda. O arquivo local e a capacidade de escrita do SQLite limitam a concorrência. |
+| Custo real | Operar um processo e um banco reduz a infraestrutura. Uma mudança que afete várias camadas exige coordenar código e testes na mesma implantação. O arquivo local e a capacidade de escrita do SQLite limitam a concorrência. |
 
 Consideramos **microsserviços**, que introduziriam pelo menos outra implantação e comunicação de rede onde uma chamada local é suficiente, e **arquitetura orientada a eventos**, que adicionaria entrega e deduplicação de mensagens a um fluxo que precisa mostrar o resultado da gravação imediatamente. Ver [ADR 0001](../adrs/0001-monolito.md).
 
@@ -43,4 +43,23 @@ def run_command(args: Namespace, repository: SqliteTickets) -> None:
 - [C4 nível 3 · Componentes](../diagrams/c4-componentes.md)
 - [Sequência · Abertura de chamado](../diagrams/sequencia-abertura.md)
 
-A obra integral indicada pela disciplina precisa ser consultada pelo grupo para conferir o capítulo do estilo e o Apêndice B.4. Os diagramas registram a estrutura implementada e usam rótulos de tipo nos conectores.
+Os diagramas seguem as seções 3.5 e 3.6 e os modelos do Apêndice B.4 de [Abreu (2026)](8-conclusao.md#referências). A aplicação Python é a unidade de implantação. O SQLite é um contêiner C4 de armazenamento, acessado como arquivo no mesmo posto de atendimento.
+
+## Verificação das dependências
+
+A função de aptidão analisa os imports em Python. Ela confere as dependências internas permitidas por módulo e limita o uso de `sqlite3` ao adaptador e ao ponto de composição. O CI roda essa verificação junto dos testes de fluxo.
+
+```python
+def test_application_and_domain_do_not_depend_on_adapters(self):
+    source_files = sorted(PACKAGE.glob("*.py"))
+    self.assertEqual({file.stem for file in source_files}, ALLOWED_INTERNAL_IMPORTS.keys())
+    for source in source_files:
+        with self.subTest(module=source.stem):
+            imports = imported_modules(source)
+            internal = {name.split(".")[1] for name in imports if name.startswith("chamados.")}
+            self.assertLessEqual(internal, ALLOWED_INTERNAL_IMPORTS[source.stem])
+            if source.stem not in SQLITE_MODULES:
+                self.assertFalse(any(name.split(".")[0] == "sqlite3" for name in imports))
+```
+
+[Ver código em `tests/test_architecture.py`](https://github.com/Silveira-k7/chamados-laboratorio/blob/dde43c9ca02c4584e898e59234092ab0829e34d2/tests/test_architecture.py#L35-L44).

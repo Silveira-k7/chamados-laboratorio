@@ -1,12 +1,12 @@
-# ADR 0001 · Monólito em camadas
+# ADR 0001 · Adotar um monólito em camadas
 
 ## Status
 
-Proposto. Aguarda a revisão da implementação pelo grupo.
+Proposto
 
 ## Contexto
 
-A rotina registra e consulta chamados em um único posto de suporte.
+A rotina registra e consulta chamados em um único posto de suporte. Uma única equipe mantém o sistema e precisa entregar CLI, regras e histórico juntos.
 
 ## Decisão
 

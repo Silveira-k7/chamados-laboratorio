@@ -1,12 +1,12 @@
-# ADR 0005 · Políticas de prazo por chamado
+# ADR 0005 · Selecionar a política de prazo por chamado
 
 ## Status
 
-Proposto. Aguarda a revisão da implementação pelo grupo.
+Proposto
 
 ## Contexto
 
-O mesmo incidente crítico pede prazos distintos em dia regular e durante prova.
+O mesmo incidente crítico pede prazos distintos em dia regular e durante prova. A data de vencimento orienta a fila durante todo o ciclo de atendimento.
 
 ## Decisão
 

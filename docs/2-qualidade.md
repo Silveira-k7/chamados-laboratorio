@@ -1,6 +1,6 @@
 # 2. Atributos de qualidade
 
-Os atributos adotam a nomenclatura do modelo de qualidade da [ISO/IEC 25010:2023](https://www.iso.org/standard/78176.html).
+Os atributos e a análise do trade-off seguem as seções 2.3 e 2.4 de [Abreu (2026)](8-conclusao.md#referências), com base no modelo de qualidade da [ISO/IEC 25010:2023](https://www.iso.org/standard/78176.html).
 
 | Atributo | Por que foi priorizado | Decisão | Medida observável |
 | --- | --- | --- | --- |

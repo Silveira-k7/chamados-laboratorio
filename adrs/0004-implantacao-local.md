@@ -1,12 +1,12 @@
-# ADR 0004 · Implantação local em Python
+# ADR 0004 · Implantar a CLI localmente com Python
 
 ## Status
 
-Proposto. Aguarda a revisão da implementação pelo grupo.
+Proposto
 
 ## Contexto
 
-A equipe alvo precisa iniciar o fluxo de triagem em um posto sem provisionar um servidor.
+A equipe alvo precisa iniciar o fluxo de triagem em um posto sem provisionar um servidor. O fluxo previsto usa um terminal e um arquivo de dados no posto.
 
 ## Decisão
 

@@ -2,7 +2,7 @@
 
 ## Observabilidade · Logs estruturados
 
-Na triagem em linha de comando, operadores precisam saber se a rotina foi concluída e distinguir erros de regras de negócio de falhas de armazenamento. Cada comando reconhecido emite um evento JSON com instante UTC, ação e resultado. Falhas incluem também a classe do erro. Os registros saem em `stderr` e permitem filtrar por operação ou resultado enquanto a saída normal segue em `stdout`.
+A seção 18.5 de [Abreu (2026)](8-conclusao.md#referências), na página 153, descreve logs estruturados como eventos com campos consultáveis. Na triagem em linha de comando, operadores precisam saber se a rotina foi concluída e distinguir erros de regras de negócio de falhas de armazenamento. Cada comando reconhecido emite um evento JSON com instante UTC, ação e resultado. Falhas incluem também a classe do erro. Os registros saem em `stderr` e permitem filtrar por operação ou resultado enquanto a saída normal segue em `stdout`.
 
 ```python
 def log_event(command: str, outcome: str, *, error_type: str | None = None) -> None:

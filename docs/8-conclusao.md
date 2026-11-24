@@ -17,7 +17,7 @@ def test_stale_update_leaves_history_untouched(self):
 
 ## Referências
 
-- Livro da disciplina **Padrões e Arquitetura de Software**. O [enunciado da disciplina](https://puc-campinas.instructure.com/courses/94516/assignments/286802) remete aos capítulos 2–5, 17–19 e ao Apêndice B.4. Título bibliográfico, autoria, ano e link da obra ficam pendentes de confirmação no material da turma.
+- ABREU, Douglas Henrique Siqueira. *Estilos Arquiteturais de Software: guia de consulta*. 2026. Material da disciplina Padrões e Arquitetura de Software, PUC-Campinas. Arquivo `Estilos-Arquiteturais-de-Software-09-26.pdf`. [Referência ao livro no enunciado do Canvas](https://puc-campinas.instructure.com/courses/94516/assignments/286802).
 - Refactoring Guru. *Padrões de Projeto* (s.d.). [Catálogo](https://refactoring.guru/pt-br/design-patterns/catalog).
 - Refactoring Guru. *Refatoração* (s.d.). [Catálogo de code smells e técnicas](https://refactoring.guru/pt-br/refactoring).
 - ISO e IEC. *ISO/IEC 25010:2023 — Product quality model* (2023). [Norma](https://www.iso.org/standard/78176.html).

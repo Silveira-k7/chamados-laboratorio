@@ -1,12 +1,12 @@
-# ADR 0003 · Separação interna por camadas e portas
+# ADR 0003 · Separar camadas e definir portas de persistência
 
 ## Status
 
-Proposto. Aguarda a revisão da implementação pelo grupo.
+Proposto
 
 ## Contexto
 
-Prazos e transições precisam evoluir sem mudanças no mecanismo de persistência.
+Prazos e transições precisam evoluir sem mudanças no mecanismo de persistência. A aplicação precisa guardar dados localmente e os testes precisam controlar o instante de abertura.
 
 ## Decisão
 
